@@ -25,11 +25,11 @@ module.exports = function routes(app, passport) {
         .get('/',          indexController.index)
         .get('/users',     indexController.list)
         .get('/users/:id', indexController.getId)
-
-        .get('/goods/:id', goodsController.get) /*status 200 || status 404*/
-        .post('/goods', goodsController.post) /*status 201 || status 400*/
-        .del('/goods/:id', goodsController.del) /*status 204 || status 400*/
-
+    //---------test routes 
+        .get('/goods/:id', goodsController.get)
+        .post('/goods', goodsController.post)
+        .del('/goods/:id', goodsController.del)
+    //-----------end test routes 
         .get('/login',     loginController.login)
         .post('/login',
             passport.authenticate('local', {

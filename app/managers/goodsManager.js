@@ -10,7 +10,7 @@
 (function () {
     "use strict";
 
-    module.exports = {
+   var self = module.exports = {
         findById: function findById (id) {
             if (id) {
                 return new Promise(resolve => {
@@ -33,7 +33,7 @@
         },
         destroy: function destroy (id) {
             return new Promise(resolve => {
-                memcached.del(id, err => resolve(id));
+                memcached.del(id, (err, data) => resolve(data));
             });
         }
     }
