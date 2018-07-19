@@ -50,7 +50,6 @@ async function del (ctx, next) {
 		ctx.status = 400;
 		await next();
 	}
-	console.log('del', ctx.body);
 }
 
 module.exports = {get, post, del};
